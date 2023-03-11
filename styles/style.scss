@@ -6,7 +6,6 @@
 		url('../fonts/statosskyeng-v1.001/Desktop\ fonts/stratosskyeng-thin.otf'),
 		url('../fonts/statosskyeng-v1.001/Desktop\ fonts/stratosskyeng-black.otf'),
 		url('../fonts/statosskyeng-v1.001/Desktop\ fonts/stratosskyeng-extralight.otf');
-
 }
 
 * {
@@ -71,6 +70,16 @@ body {
 	display: flex;
 	align-items: center;
 	justify-content: center;
+	border: transparent 3px solid;
+	cursor: pointer;
+	transition: border 0.2s;
+	&:hover {
+		border: #004980 3px solid;
+	}
+}
+
+.difficulty__levels > input:checked + label {
+	border: #004980 3px solid;
 }
 
 .difficulty__btn {
@@ -89,4 +98,10 @@ body {
 
 	background: #7ac100;
 	border-radius: 12px;
+	cursor: pointer;
+	transition: all 0.3s linear;
+	&:hover {
+	background: #004980;
+
+	}
 }

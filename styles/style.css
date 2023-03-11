@@ -64,6 +64,16 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
+  border: transparent 3px solid;
+  cursor: pointer;
+  transition: border 0.2s;
+}
+.difficulty__levels > label:hover {
+  border: #004980 3px solid;
+}
+
+.difficulty__levels > input:checked + label {
+  border: #004980 3px solid;
 }
 
 .difficulty__btn {
@@ -79,4 +89,9 @@ body {
   border: none;
   background: #7ac100;
   border-radius: 12px;
+  cursor: pointer;
+  transition: all 0.3s linear;
+}
+.difficulty__btn:hover {
+  background: #004980;
 }/*# sourceMappingURL=style.css.map */
