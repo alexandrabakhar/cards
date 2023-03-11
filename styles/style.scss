@@ -1,0 +1,92 @@
+@font-face {
+	font-family: 'StratosSkyeng';
+	src: url('../fonts/statosskyeng-v1.001/Desktop\ fonts/stratosskyeng-regular.otf'),
+		url('../fonts/statosskyeng-v1.001/Desktop\ fonts/stratosskyeng-light.otf'),
+		url('../fonts/statosskyeng-v1.001/Desktop\ fonts/stratosskyeng-medium.otf'),
+		url('../fonts/statosskyeng-v1.001/Desktop\ fonts/stratosskyeng-thin.otf'),
+		url('../fonts/statosskyeng-v1.001/Desktop\ fonts/stratosskyeng-black.otf'),
+		url('../fonts/statosskyeng-v1.001/Desktop\ fonts/stratosskyeng-extralight.otf');
+
+}
+
+* {
+	margin: 0;
+	padding: 0;
+}
+
+body {
+	width: 100vw;
+	height: 100vh;
+	background-color: #004980;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.block__difficulty {
+	height: 60.6vh;
+	width: 46.88vw;
+	background-color: #c2f5ff;
+	border-radius: 12px;
+	display: flex;
+	align-items: center;
+	flex-direction: column;
+	justify-content: space-evenly;
+}
+
+.difficulty__heading {
+	font-family: 'StratosSkyeng';
+	font-style: normal;
+	font-weight: 400;
+	font-size: 40px;
+	line-height: 48px;
+
+	text-align: center;
+	font-feature-settings: 'pnum' on, 'lnum' on;
+
+	color: #004980;
+}
+.difficulty__levels-radio {
+	display: none;
+}
+
+.difficulty__levels {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	gap: 24px;
+}
+.difficulty__levels > label {
+	width: 98px;
+	height: 98px;
+	text-align: center;
+	font-family: 'StratosSkyeng';
+	font-style: normal;
+	font-weight: 400;
+	font-size: 64px;
+	line-height: 72px;
+	color: #0080c1;
+	background: #ffffff;
+	border-radius: 12px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.difficulty__btn {
+	font-family: 'StratosSkyeng';
+	font-style: normal;
+	font-weight: 400;
+	font-size: 24px;
+	line-height: 32px;
+	text-align: center;
+
+	color: #ffffff;
+
+	width: 246px;
+	height: 50px;
+	border: none;
+
+	background: #7ac100;
+	border-radius: 12px;
+}
