@@ -1,12 +1,14 @@
-function selectGameLevel (event) {
+function selectGameLevel(event) {
     event.preventDefault();
 
-    const difficultyLevels = blockDifficulty.querySelector('.difficulty__levels');
+    const difficultyLevels = blockDifficulty.querySelector(
+        '.difficulty__levels'
+    );
 
     const selectedLevel = difficultyLevels.querySelector('input:checked');
     if (!selectedLevel) {
         console.log('Выберите уровень!');
-        return
+        return;
     }
 
     window.application.level = selectedLevel.value;

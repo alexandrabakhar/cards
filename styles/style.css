@@ -10,6 +10,11 @@
 body {
   width: 100vw;
   height: 100vh;
+}
+
+.content {
+  width: 100vw;
+  height: 100vh;
   background-color: #004980;
   display: flex;
   align-items: center;
@@ -76,7 +81,7 @@ body {
   border: #004980 3px solid;
 }
 
-.difficulty__btn {
+.btn {
   font-family: "StratosSkyeng";
   font-style: normal;
   font-weight: 400;
@@ -92,6 +97,60 @@ body {
   cursor: pointer;
   transition: all 0.3s linear;
 }
-.difficulty__btn:hover {
+.btn:hover {
   background: #004980;
+}
+
+.game__screen {
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+.game__header {
+  display: flex;
+  justify-content: space-between;
+  width: 100vw;
+  height: 15vh;
+  box-sizing: border-box;
+  padding-left: 2.3vw;
+  padding-right: 2.3vw;
+  align-items: flex-end;
+}
+
+.game__clock-container {
+  width: 155px;
+}
+
+.game__clock-text {
+  display: flex;
+  align-items: flex-start;
+  height: 26px;
+  justify-content: space-between;
+}
+
+.game__clock-text > span {
+  font-family: "StratosSkyeng";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 32px;
+  margin-left: 39px;
+  font-feature-settings: "pnum" on, "lnum" on;
+  text-align: end;
+  color: #ffffff;
+}
+
+.game__clock {
+  font-family: "StratosSkyeng";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 64px;
+  line-height: 72px;
+  color: #ffffff;
+  text-align: start;
+}
+
+main {
+  width: 100vw;
+  height: 85vh;
 }/*# sourceMappingURL=style.css.map */
