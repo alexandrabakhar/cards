@@ -1,11 +1,13 @@
-function renderDifficultyHeading(container) {
+import { createCardsArrayByLevel } from './createCardsArrayByLevel';
+
+export function renderDifficultyHeading(container) {
     const heading = document.createElement('h2');
     heading.classList.add('difficulty__heading');
     heading.textContent = 'Выбери сложность';
     container.appendChild(heading);
 }
 
-function renderDifficultyLevelsRadio(container) {
+export function renderDifficultyLevelsRadio(container) {
     for (let i = 1; i <= 3; i++) {
         const input = document.createElement('input');
         input.setAttribute('id', `level${i}`);
@@ -22,14 +24,14 @@ function renderDifficultyLevelsRadio(container) {
     }
 }
 
-function renderDifficultyBtn(container) {
+export function renderDifficultyBtn(container) {
     const btn = document.createElement('button');
     btn.classList.add('difficulty__btn', 'btn');
     btn.textContent = 'Играть';
     container.appendChild(btn);
 }
 
-function renderGameClock(container) {
+export function renderGameClock(container) {
     const box = document.createElement('div');
     box.classList.add('game__clock-container');
 
@@ -53,79 +55,23 @@ function renderGameClock(container) {
     container.appendChild(box);
 }
 
-function renderGameBtn(container) {
+export function renderGameBtn(container) {
     const btn = document.createElement('button');
     btn.classList.add('game__btn', 'btn');
     btn.textContent = 'Начать заново';
     container.appendChild(btn);
 }
 
-window.application = {
-    level: '',
-    blocks: {
-        'difficulty-heading': renderDifficultyHeading,
-        'difficulty-levels-radio': renderDifficultyLevelsRadio,
-        'difficulty-btn': renderDifficultyBtn,
-        'game-clock': renderGameClock,
-        'game-btn': renderGameBtn,
-    },
-    screens: {
-        difficulty: function renderDifficultyScreen() {
-            const content = document.querySelector('.content');
+export function renderCards(container) {
+    const cardsArray = createCardsArrayByLevel(+window.application.level);
 
-            const form = document.createElement('form');
-            form.classList.add('block__difficulty');
-            content.appendChild(form);
-
-            // form.addEventListener('submit', selectGameLevel);
-
-            window.application.renderBlock('difficulty-heading', form);
-
-            const div = document.createElement('div');
-            div.classList.add('difficulty__levels');
-            form.appendChild(div);
-
-            window.application.renderBlock('difficulty-levels-radio', div);
-            window.application.renderBlock('difficulty-btn', form);
-        },
-        game: function renderGameScreen() {
-            const content = document.querySelector('.content');
-
-            content.classList.add('game__screen');
-
-            const header = document.createElement('header');
-            header.classList.add('game__header');
-            content.appendChild(header);
-
-            window.application.renderBlock('game-clock', header);
-            window.application.renderBlock('game-btn', header);
-
-            const main = document.createElement('main');
-            content.appendChild(main);
-            // window.application.screens['game']['renderGameScreen'];
-        },
-    },
-    renderScreen: function (screenName) {
-        this.timers.forEach((timer) => {
-            clearInterval(timer);
-        });
-
-        this.timers = [];
-
-        if (!this.screens[screenName]) {
-            console.log(`Такого поля '${screenName}' нет!`);
-            return;
-        }
-        this.screens[screenName]();
-    },
-    renderBlock: function (blockName, container) {
-        if (!this.blocks[blockName]) {
-            console.log(`Такого поля '${blockName}' нет!`);
-            return;
-        }
-        this.blocks[blockName](container);
-    },
-    timers: [],
-};
-
-window.application.renderScreen('game');
+    for (let i = 0; i < cardsArray.length; i++) {
+        const card = cardsArray[i];
+        const img = document.createElement('img');
+        img.setAttribute('src', `${card.img}`);
+        img.setAttribute('alt', `${card.name}`);
+        img.setAttribute('id', `${card.name}`);
+        img.classList.add('card');
+        container.appendChild(img);
+    }
+}
