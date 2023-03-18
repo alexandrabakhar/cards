@@ -11,6 +11,7 @@
         "sourceType": "module",
         "allowImportExportEverywhere": true
     },
+    "ignorePatterns": ["dist/bundle.js"],
     "rules": {
         "prettier/prettier": "error",
         "camelcase": ["error"],
