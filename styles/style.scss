@@ -184,3 +184,70 @@ main {
 .back {
     content: url('../static/images/back.png');
 }
+
+.modal__wrapper {
+    display: flex; /* Скрыто по умолчанию */
+    align-items: center;
+    justify-content: center;
+    position: fixed; /* Оставаться на месте */
+    z-index: 1; /* Сидеть на вершине */
+    left: 0;
+    top: 0;
+    width: 100%; /* Полная ширина */
+    height: 100%; /* Полная высота */
+    overflow: auto; /* Включите прокрутку, если это необходимо */
+    transition: all 0.8s ease 0s;
+    background: rgb(0, 73, 128, 0.9);
+}
+
+.modal__content {
+    height: 60.6vh;
+    width: 46.88vw;
+    background-color: #c2f5ff;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    gap: 12px;
+    justify-content: flex-start;
+}
+.modal__img {
+    width: 96px;
+    height: 96px;
+}
+.modal__title {
+    font-family: 'StratosSkyeng', 'sans-serif';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 40px;
+    line-height: 48px;
+
+    text-align: center;
+    font-feature-settings: 'pnum' on, 'lnum' on;
+
+    color: #004980;
+}
+
+.modal__text {
+    font-family: 'StratosSkyeng', 'sans-serif';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 32px;
+    /* identical to box height, or 133% */
+
+    font-feature-settings: 'pnum' on, 'lnum' on;
+
+    color: #000000;
+}
+
+.modal__time {
+    font-family: 'StratosSkyeng', 'sans-serif';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 64px;
+    line-height: 72px;
+    /* identical to box height, or 112% */
+
+    color: #000000;
+}

@@ -1,4 +1,4 @@
-export const ALL_CARDS = [
+export const ALL_CARDS: cardsObject [] = [
     {
         id: 0,
         name: 'back',

@@ -1,7 +1,7 @@
 export const stopwatch = () => {
-    const clock = document.querySelector('.game__clock');
-    let sec = 0;
-    let min = 0;
+    const clock = document.querySelector('.game__clock') as HTMLElement;
+    let sec: number = 0;
+    let min: number = 0;
 
     function tick() {
         sec++;

@@ -1,15 +1,15 @@
 import { createCardsArrayByLevel } from './createCardsArrayByLevel';
 
-export function renderDifficultyHeading(container) {
-    const heading = document.createElement('h2');
+export function renderDifficultyHeading(container: HTMLElement) {
+    const heading: HTMLHeadingElement = document.createElement('h2');
     heading.classList.add('difficulty__heading');
     heading.textContent = 'Выбери сложность';
     container.appendChild(heading);
 }
 
-export function renderDifficultyLevelsRadio(container) {
+export function renderDifficultyLevelsRadio(container: HTMLElement) {
     for (let i = 1; i <= 3; i++) {
-        const input = document.createElement('input');
+        const input: HTMLInputElement = document.createElement('input');
         input.setAttribute('id', `level${i}`);
         input.setAttribute('value', `${i}`);
         input.setAttribute('name', `levels`);
@@ -24,14 +24,14 @@ export function renderDifficultyLevelsRadio(container) {
     }
 }
 
-export function renderDifficultyBtn(container) {
+export function renderDifficultyBtn(container: HTMLElement) {
     const btn = document.createElement('button');
     btn.classList.add('difficulty__btn', 'btn');
     btn.textContent = 'Играть';
     container.appendChild(btn);
 }
 
-export function renderGameClock(container) {
+export function renderGameClock(container: HTMLElement) {
     const box = document.createElement('div');
     box.classList.add('game__clock-container');
 
@@ -55,19 +55,25 @@ export function renderGameClock(container) {
     container.appendChild(box);
 }
 
-export function renderGameBtn(container) {
+export function renderGameBtn(container: HTMLElement) {
     const btn = document.createElement('button');
     btn.classList.add('game__btn', 'btn');
     btn.textContent = 'Начать заново';
     container.appendChild(btn);
+    btn.addEventListener('click', (event) => {
+        event.preventDefault();
+        window.application.renderScreen('difficulty');
+    });
 }
 
-export function renderCards(container) {
-    const cardsArray = createCardsArrayByLevel(+window.application.level);
+export function renderCards(container: HTMLElement) {
+    const cardsArray = createCardsArrayByLevel(
+        window.application.level
+    ) as cardsObject[];
 
     for (let i = 0; i < cardsArray.length; i++) {
         const card = cardsArray[i];
-        const img = document.createElement('img');
+        const img: HTMLImageElement = document.createElement('img');
         img.setAttribute('src', `${card.img}`);
         img.setAttribute('alt', `${card.name}`);
         img.setAttribute('id', `${card.name}`);
