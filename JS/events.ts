@@ -3,9 +3,13 @@ export function selectGameLevel(event: Event) {
     event.preventDefault();
     const content = document.querySelector('.content') as HTMLFormElement;
 
-    const difficultyLevels = content.querySelector('.difficulty__levels') as HTMLElement;
+    const difficultyLevels = content.querySelector(
+        '.difficulty__levels'
+    ) as HTMLElement;
 
-    const selectedLevel = difficultyLevels.querySelector('input:checked') as HTMLInputElement;
+    const selectedLevel = difficultyLevels.querySelector(
+        'input:checked'
+    ) as HTMLInputElement;
     if (!selectedLevel) {
         console.log('Выберите уровень!');
         return;

@@ -6,13 +6,12 @@
     "scripts": {
         "test": "echo \"Error: no test specified\" && exit 1",
         "format": "prettier —write .",
-        "lint:js": "eslint '**/*.js'",
+        "lint:ts": "eslint '**/*.ts'",
         "lint:css": "stylelint './styles/**.css'",
         "prepare": "husky install",
-        "lint": "npm run lint:js && npm run lint:css",
+        "lint": "npm run lint:ts && npm run lint:css",
         "build": "NODE_ENV=production webpack",
-        "start": "webpack-dev-server --open",
-        "lint:ts": "tsc --noEmit"
+        "start": "webpack-dev-server --open"
     },
     "repository": {
         "type": "git",
@@ -30,7 +29,7 @@
         "copy-webpack-plugin": "^11.0.0",
         "css-loader": "^6.7.3",
         "css-minimizer-webpack-plugin": "^4.2.2",
-        "eslint": "8.36.0",
+        "eslint": "^8.36.0",
         "eslint-config-prettier": "8.7.0",
         "eslint-plugin-prettier": "4.2.1",
         "html-webpack-plugin": "^5.5.0",

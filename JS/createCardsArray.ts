@@ -1,9 +1,10 @@
 import { ALL_CARDS } from './CARDS';
 import { randomizer } from './randomizer';
+import { cardsObject } from './abstractTypes';
 
 export const createCardsArray = (cardsAmount: number) => {
-    const cardsArray: cardsObject [] = [];
-    const numbersArray: number [] = [];
+    const cardsArray: cardsObject[] = [];
+    const numbersArray: number[] = [];
 
     for (let i = 0; i < cardsAmount; i++) {
         const randomNumber: number = randomizer();

@@ -55,19 +55,14 @@ export const renderGameScreen = () => {
     window.application.timers.push(hideCards);
 };
 
-
 export const renderWinScreen = () => {
-
     const modal = new Modal('win');
-    modal.buildModal('Вы выиграли!')
+    modal.buildModal('Вы выиграли!');
     modal.openModal();
-
-}
+};
 
 export const renderLooseScreen = () => {
-
     const modal = new Modal('loose');
-    modal.buildModal('Вы проиграли!')
+    modal.buildModal('Вы проиграли!');
     modal.openModal();
-
-}
+};

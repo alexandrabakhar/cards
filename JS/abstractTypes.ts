@@ -1,24 +1,24 @@
-interface cardsObject {
+export interface cardsObject {
     id: number;
     name: string;
     img: string;
-};
+}
 
 // interface InputRender {
 //     [key: string]: () => void
 // }
 
-interface Application {
+export interface Application {
     answer: string[];
     level: number;
     gameTime: string;
-    gameStatus: {};
-    timers: string[];
+    gameStatus: object;
+    timers: NodeJS.Timer[];
     blocks: {
         [key: string]: (container: HTMLElement) => void;
     };
     screens: {
-        [key: string]: () => void
+        [key: string]: () => void;
     };
     renderBlock: (blockName: string, container: HTMLElement) => void;
     renderScreen: (screenName: string) => void;

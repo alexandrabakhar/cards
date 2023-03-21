@@ -1,4 +1,6 @@
-export const ALL_CARDS: cardsObject [] = [
+import { cardsObject } from './abstractTypes';
+
+export const ALL_CARDS: cardsObject[] = [
     {
         id: 0,
         name: 'back',

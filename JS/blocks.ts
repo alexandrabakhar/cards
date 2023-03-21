@@ -1,4 +1,5 @@
 import { createCardsArrayByLevel } from './createCardsArrayByLevel';
+import { cardsObject } from './abstractTypes';
 
 export function renderDifficultyHeading(container: HTMLElement) {
     const heading: HTMLHeadingElement = document.createElement('h2');

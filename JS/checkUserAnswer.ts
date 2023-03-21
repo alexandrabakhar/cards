@@ -6,7 +6,7 @@ export const checkUserAnswer = (answer: string) => {
     const length = answersArray.length;
     if (answer !== answersArray[length - 2] && length % 2 === 0) {
         const clock = document.querySelector('.game__clock') as HTMLElement;
-        const time = clock.textContent;
+        const time = clock.textContent as string;
         window.application.gameTime = time;
         window.application.answer = [];
         window.application.stopInterval();
@@ -18,7 +18,7 @@ export const checkUserAnswer = (answer: string) => {
 
     if (length === level * 6) {
         const clock = document.querySelector('.game__clock') as HTMLElement;
-        const time = clock.textContent;
+        const time = clock.textContent as string;
         window.application.gameTime = time;
         window.application.answer = [];
         window.application.stopInterval();

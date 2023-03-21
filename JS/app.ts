@@ -1,10 +1,22 @@
 import '../styles/style.css';
-import { renderDifficultyScreen, renderGameScreen, renderLooseScreen, renderWinScreen} from './screens';
-import { renderDifficultyHeading, renderDifficultyLevelsRadio, renderDifficultyBtn, renderGameClock, renderGameBtn, renderCards } from './blocks';
-
+import {
+    renderDifficultyScreen,
+    renderGameScreen,
+    renderLooseScreen,
+    renderWinScreen,
+} from './screens';
+import {
+    renderDifficultyHeading,
+    renderDifficultyLevelsRadio,
+    renderDifficultyBtn,
+    renderGameClock,
+    renderGameBtn,
+    renderCards,
+} from './blocks';
+import { Application } from './abstractTypes';
 declare global {
     interface Window {
-        application: any;
+        application: Application;
     }
 }
 window.application = {
@@ -35,7 +47,7 @@ window.application = {
         this.blocks[blockName](container);
     },
     renderScreen: function (screenName: string) {
-        this.timers.forEach((timer: string) => {
+        this.timers.forEach((timer: NodeJS.Timer) => {
             clearInterval(timer);
         });
 
@@ -48,7 +60,7 @@ window.application = {
         this.screens[screenName]();
     },
     stopInterval: function (): void {
-        this.timers.forEach((timer: string) => {
+        this.timers.forEach((timer: NodeJS.Timer) => {
             clearInterval(timer);
         });
     },
