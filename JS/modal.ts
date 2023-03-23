@@ -1,146 +1,31 @@
-// export class Modal {
-//     constructor(gameStatus) {
-//         this.classes = [];
-//         this.modal = '';
-//         this.modalTitle = '';
-//         this.modalBtn = '';
-//         this.wrapper = '';
-//         this.modalText = '';
-//         this.time = '';
-//         this.modalImg = '';
-//         this.gameStatus = gameStatus;
-//     }
-
-//     buildModal(title) {
-//         this.wrapper = this.createDomNode(
-//             this.wrapper,
-//             'div',
-//             'modal__wrapper'
-//         );
-
-//         this.modal = this.createDomNode(this.modal, 'div', 'modal__content');
-
-//         this.modalTitle = this.createDomNode(
-//             this.modalTitle,
-//             'h2',
-//             'modal__title'
-//         );
-//         this.modalTitle.textContent = title;
-
-//         this.modalText = this.createDomNode(this.modalText, 'p', 'modal__text');
-//         this.modalText.textContent = 'Затраченное время:';
-//         this.time = this.createDomNode(this.time, 'h1', 'modal__time');
-//         this.time.textContent = window.application.gameTime;
-//         this.classes = ['btn', 'modal__btn'];
-//         this.modalBtn = this.createDomNode(
-//             this.modalBtn,
-//             'button',
-//             this.classes
-//         );
-//         this.modalBtn.textContent = 'Играть снова';
-//         this.buildImg(this.gameStatus);
-//         this.bindEvents();
-//         this.appendsModalElements();
-//     }
-
-//     buildImg(status) {
-//         this.modalImg = this.createDomNode(this.modalImg, 'img', 'modal__img');
-//         if (status === 'win') {
-//             this.modalImg.setAttribute('src', '../static/images/win.png');
-//             this.modalImg.setAttribute('alt', 'WIN');
-//             return;
-//         }
-//         if (status === 'loose') {
-//             this.modalImg.setAttribute('src', '../static/images/loose.png');
-//             this.modalImg.setAttribute('alt', 'LOOSE');
-//             return;
-//         }
-//     }
-//     createDomNode(node, elemHTML, classes) {
-//         node = document.createElement(elemHTML);
-//         if (classes) {
-//             if (Array.isArray(classes)) {
-//                 node.classList.add(...classes);
-//                 return node;
-//             }
-//             node.classList.add(classes);
-//         }
-
-//         return node;
-//     }
-
-//     appendsModalElements() {
-//         this.wrapper.append(this.modal);
-//         this.modal.append(this.modalImg);
-//         this.modal.append(this.modalTitle);
-//         this.modal.append(this.modalText);
-//         this.modal.append(this.time);
-//         this.modal.append(this.modalBtn);
-//     }
-
-//     bindEvents() {
-//         this.modalBtn.addEventListener('click', (event) => {
-//             event.preventDefault();
-//             window.application.renderScreen('difficulty');
-//         });
-//     }
-//     openModal() {
-//         document.querySelector('.content').append(this.wrapper);
-//     }
-
-//     closeModal() {
-//         this.wrapper.remove();
-//     }
-// }
-
 export class Modal {
-    classes: string[];
-    modal: HTMLElement;
-    modalTitle: HTMLElement;
-    modalBtn: HTMLElement;
-    wrapper: HTMLElement;
-    modalText: HTMLElement;
-    time: HTMLElement;
-    modalImg: HTMLElement;
+    classes?: string[];
+    modal?: HTMLElement;
+    modalTitle?: HTMLElement;
+    modalBtn?: HTMLElement;
+    wrapper?: HTMLElement;
+    modalText?: HTMLElement;
+    time?: HTMLElement;
+    modalImg?: HTMLElement;
     gameStatus: string;
     constructor(gameStatus: string) {
-        this.classes = [];
-        this.modal = new HTMLElement();
-        this.modalTitle = new HTMLElement();
-        this.modalBtn = new HTMLElement();
-        this.wrapper = new HTMLElement();
-        this.modalText = new HTMLElement();
-        this.time = new HTMLElement();
-        this.modalImg = new HTMLElement();
         this.gameStatus = gameStatus;
     }
 
     buildModal(title: string) {
-        this.wrapper = this.createDomNode(
-            this.wrapper,
-            'div',
-            'modal__wrapper'
-        );
+        this.wrapper = this.createDomNode('div', 'modal__wrapper');
 
-        this.modal = this.createDomNode(this.modal, 'div', 'modal__content');
+        this.modal = this.createDomNode('div', 'modal__content');
 
-        this.modalTitle = this.createDomNode(
-            this.modalTitle,
-            'h2',
-            'modal__title'
-        );
+        this.modalTitle = this.createDomNode('h2', 'modal__title');
         this.modalTitle.textContent = title;
 
-        this.modalText = this.createDomNode(this.modalText, 'p', 'modal__text');
+        this.modalText = this.createDomNode('p', 'modal__text');
         this.modalText.textContent = 'Затраченное время:';
-        this.time = this.createDomNode(this.time, 'h1', 'modal__time');
+        this.time = this.createDomNode('h1', 'modal__time');
         this.time.textContent = window.application.gameTime;
         this.classes = ['btn', 'modal__btn'];
-        this.modalBtn = this.createDomNode(
-            this.modalBtn,
-            'button',
-            this.classes
-        );
+        this.modalBtn = this.createDomNode('button', this.classes);
         this.modalBtn.textContent = 'Играть снова';
         this.buildImg(this.gameStatus);
         this.bindEvents();
@@ -148,7 +33,7 @@ export class Modal {
     }
 
     buildImg(status: string) {
-        this.modalImg = this.createDomNode(this.modalImg, 'img', 'modal__img');
+        this.modalImg = this.createDomNode('img', 'modal__img');
         if (status === 'win') {
             this.modalImg.setAttribute('src', '../static/images/win.png');
             this.modalImg.setAttribute('alt', 'WIN');
@@ -160,12 +45,8 @@ export class Modal {
             return;
         }
     }
-    createDomNode(
-        node: HTMLElement,
-        elemHTML: string,
-        classes: string | string[]
-    ) {
-        node = document.createElement(elemHTML);
+    createDomNode(elemHTML: string, classes: string | string[]) {
+        const node = document.createElement(elemHTML);
         if (classes) {
             if (Array.isArray(classes)) {
                 node.classList.add(...classes);
@@ -178,25 +59,44 @@ export class Modal {
     }
 
     appendsModalElements() {
-        this.wrapper.append(this.modal);
-        this.modal.append(this.modalImg);
-        this.modal.append(this.modalTitle);
-        this.modal.append(this.modalText);
-        this.modal.append(this.time);
-        this.modal.append(this.modalBtn);
+        if (
+            !this.wrapper ||
+            !this.modal ||
+            !this.modal ||
+            !this.modal ||
+            !this.modal ||
+            !this.modal
+        ) {
+            return;
+        }
+        this.wrapper.appendChild(this.modal);
+        this.modal.appendChild(this.modalImg as HTMLElement);
+        this.modal.appendChild(this.modalTitle as HTMLElement);
+        this.modal.appendChild(this.modalText as HTMLElement);
+        this.modal.appendChild(this.time as HTMLElement);
+        this.modal.appendChild(this.modalBtn as HTMLElement);
     }
 
     bindEvents() {
+        if (!this.modalBtn) {
+            return;
+        }
         this.modalBtn.addEventListener('click', (event) => {
             event.preventDefault();
             window.application.renderScreen('difficulty');
         });
     }
     openModal() {
+        if (!this.wrapper) {
+            return;
+        }
         document.querySelector('.content')?.append(this.wrapper);
     }
 
     closeModal() {
+        if (!this.wrapper) {
+            return;
+        }
         this.wrapper.remove();
     }
 }
