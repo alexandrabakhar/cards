@@ -1,4 +1,5 @@
 export const randomizer = (): number => {
-    const randomNumber: number = Math.round(Math.random() * 35 + 1);
+    const randomNumber: number = Math.floor(Math.random() * 36 + 1);
+
     return randomNumber;
 };
