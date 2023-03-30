@@ -1,5 +1,5 @@
 import { it, describe, expect } from '@jest/globals';
-import { randomizer } from '../JS/randomizer';
+import { randomizer } from '../src/TS/randomizer';
 
 describe('randomizer', () => {
     it('should return number over or equal 1', () => {

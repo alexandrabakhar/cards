@@ -4,10 +4,6 @@ export interface cardsObject {
     img: string;
 }
 
-// interface InputRender {
-//     [key: string]: () => void
-// }
-
 export interface Application {
     answer: string[];
     level: number;

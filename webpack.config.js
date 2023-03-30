@@ -5,7 +5,7 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const CssMinimizerPlugin = require('css-minimizer-webpack-plugin');
 
 module.exports = {
-    entry: './JS/app.ts',
+    entry: './src/TS/app.ts',
     mode: process.env.NODE_ENV === 'production' ? 'production' : 'development',
     module: {
         rules: [
@@ -39,10 +39,10 @@ module.exports = {
     },
     plugins: [
         new CopyPlugin({
-            patterns: [{ from: 'static', to: 'static' }],
+            patterns: [{ from: './src/static', to: 'static' }],
         }),
         new HtmlWebpackPlugin({
-            template: './index.html',
+            template: './src/index.html',
         }),
         new MiniCssExtractPlugin(),
     ],
