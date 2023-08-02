@@ -12,6 +12,7 @@
     "lint": "npm run lint:js && npm run lint:css",
     "build": "NODE_ENV=development webpack",
     "start": "webpack-dev-server --open"
+
   },
   "repository": {
     "type": "git",
@@ -44,5 +45,6 @@
     "webpack": "^5.76.2",
     "webpack-cli": "^5.0.1",
     "webpack-dev-server": "^4.12.0"
+
   }
 }

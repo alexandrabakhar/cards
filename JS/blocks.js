@@ -1,6 +1,7 @@
 import { createCardsArrayByLevel } from './createCardsArrayByLevel';
 
 export function renderDifficultyHeading(container) {
+
     const heading = document.createElement('h2');
     heading.classList.add('difficulty__heading');
     heading.textContent = 'Выбери сложность';
@@ -8,6 +9,7 @@ export function renderDifficultyHeading(container) {
 }
 
 export function renderDifficultyLevelsRadio(container) {
+
     for (let i = 1; i <= 3; i++) {
         const input = document.createElement('input');
         input.setAttribute('id', `level${i}`);
@@ -25,6 +27,7 @@ export function renderDifficultyLevelsRadio(container) {
 }
 
 export function renderDifficultyBtn(container) {
+
     const btn = document.createElement('button');
     btn.classList.add('difficulty__btn', 'btn');
     btn.textContent = 'Играть';
@@ -32,6 +35,7 @@ export function renderDifficultyBtn(container) {
 }
 
 export function renderGameClock(container) {
+
     const box = document.createElement('div');
     box.classList.add('game__clock-container');
 
@@ -56,6 +60,7 @@ export function renderGameClock(container) {
 }
 
 export function renderGameBtn(container) {
+
     const btn = document.createElement('button');
     btn.classList.add('game__btn', 'btn');
     btn.textContent = 'Начать заново';

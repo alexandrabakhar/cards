@@ -14,3 +14,4 @@ export function selectGameLevel(event) {
 
     window.application.renderScreen('game');
 }
+

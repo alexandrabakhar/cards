@@ -6,6 +6,7 @@
         url('../static/statosskyeng-v1.001/Desktop fonts/stratosskyeng-thin.otf'),
         url('../static/statosskyeng-v1.001/Desktop fonts/stratosskyeng-black.otf'),
         url('../static/statosskyeng-v1.001/Desktop fonts/stratosskyeng-extralight.otf');
+
 }
 
 * {
@@ -176,3 +177,4 @@ main {
 .back {
     content: url('../static/images/back.png');
 } /*# sourceMappingURL=style.css.map */
+

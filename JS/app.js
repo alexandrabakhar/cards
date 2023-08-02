@@ -57,4 +57,3 @@ window.application = {
     },
 };
 
-window.application.renderScreen('difficulty');
