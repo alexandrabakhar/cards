@@ -1,0 +1,245 @@
+@charset "UTF-8";
+@font-face {
+    font-family: StratosSkyeng;
+    src: url('../static/statosskyeng-v1.001/Desktop fonts/stratosskyeng-regular.otf'),
+        url('../static/statosskyeng-v1.001/Desktop fonts/stratosskyeng-light.otf'),
+        url('../static/statosskyeng-v1.001/Desktop fonts/stratosskyeng-medium.otf'),
+        url('../static/statosskyeng-v1.001/Desktop fonts/stratosskyeng-thin.otf'),
+        url('../static/statosskyeng-v1.001/Desktop fonts/stratosskyeng-black.otf'),
+        url('../static/statosskyeng-v1.001/Desktop fonts/stratosskyeng-extralight.otf');
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    width: 100vw;
+    height: 100vh;
+}
+
+.content {
+    width: 100vw;
+    height: 100vh;
+    background-color: #004980;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.block__difficulty {
+    height: 60.6vh;
+    width: 46.88vw;
+    background-color: #c2f5ff;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+
+.difficulty__heading {
+    font-family: StratosSkyeng, sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 40px;
+    line-height: 48px;
+    text-align: center;
+    font-feature-settings: 'pnum' on, 'lnum' on;
+    color: #004980;
+}
+
+.difficulty__levels-radio {
+    display: none;
+}
+
+.difficulty__levels {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 24px;
+}
+
+.difficulty__levels > label {
+    width: 98px;
+    height: 98px;
+    text-align: center;
+    font-family: StratosSkyeng, sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 64px;
+    line-height: 72px;
+    color: #0080c1;
+    background: #fff;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: transparent 3px solid;
+    cursor: pointer;
+    transition: border 0.2s;
+}
+
+.difficulty__levels > label:hover {
+    border: #004980 3px solid;
+}
+
+.difficulty__levels > input:checked + label {
+    border: #004980 3px solid;
+}
+
+.btn {
+    font-family: StratosSkyeng, sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 32px;
+    text-align: center;
+    color: #fff;
+    width: 246px;
+    height: 50px;
+    border: none;
+    background: #7ac100;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: all 0.3s linear;
+}
+
+.btn:hover {
+    background: #004980;
+}
+
+.game__screen {
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+.game__header {
+    display: flex;
+    justify-content: space-between;
+    width: 100vw;
+    height: 15vh;
+    box-sizing: border-box;
+    padding-left: 2.3vw;
+    padding-right: 2.3vw;
+    align-items: flex-end;
+}
+
+.game__clock-container {
+    width: 155px;
+}
+
+.game__clock-text {
+    display: flex;
+    align-items: flex-start;
+    height: 26px;
+    justify-content: space-between;
+}
+
+.game__clock-text > span {
+    font-family: StratosSkyeng, sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 32px;
+    margin-left: 39px;
+    font-feature-settings: 'pnum' on, 'lnum' on;
+    text-align: end;
+    color: #fff;
+}
+
+.game__clock {
+    font-family: StratosSkyeng, sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 64px;
+    line-height: 72px;
+    color: #fff;
+    text-align: start;
+}
+
+main {
+    width: 100vw;
+    height: 85vh;
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    align-items: center;
+    justify-items: center;
+    align-content: center;
+}
+
+.card {
+    padding: 20px;
+    cursor: pointer;
+}
+
+.back {
+    content: url('../static/images/back.png');
+}
+
+.modal__wrapper {
+    display: flex; /* Скрыто по умолчанию */
+    align-items: center;
+    justify-content: center;
+    position: fixed; /* Оставаться на месте */
+    z-index: 1; /* Сидеть на вершине */
+    left: 0;
+    top: 0;
+    width: 100%; /* Полная ширина */
+    height: 100%; /* Полная высота */
+    overflow: auto; /* Включите прокрутку, если это необходимо */
+    transition: all 0.8s ease 0s;
+    background: rgb(0 73 128 / 90%);
+}
+
+.modal__content {
+    height: 60.6vh;
+    width: 46.88vw;
+    background-color: #c2f5ff;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    gap: 12px;
+    justify-content: flex-start;
+}
+
+.modal__img {
+    width: 96px;
+    height: 96px;
+}
+
+.modal__title {
+    font-family: StratosSkyeng, sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 40px;
+    line-height: 48px;
+    text-align: center;
+    font-feature-settings: 'pnum' on, 'lnum' on;
+    color: #004980;
+}
+
+.modal__text {
+    font-family: StratosSkyeng, sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 32px;
+
+    /* identical to box height, or 133% */
+    font-feature-settings: 'pnum' on, 'lnum' on;
+    color: #000;
+}
+
+.modal__time {
+    font-family: StratosSkyeng, sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 64px;
+    line-height: 72px;
+
+    /* identical to box height, or 112% */
+    color: #000;
+} /*# sourceMappingURL=style.css.map */
