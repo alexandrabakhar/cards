@@ -1,11 +1,12 @@
 @font-face {
     font-family: StratosSkyeng;
-    src: url('../fonts/statosskyeng-v1.001/Desktop fonts/stratosskyeng-regular.otf'),
-        url('../fonts/statosskyeng-v1.001/Desktop fonts/stratosskyeng-light.otf'),
-        url('../fonts/statosskyeng-v1.001/Desktop fonts/stratosskyeng-medium.otf'),
-        url('../fonts/statosskyeng-v1.001/Desktop fonts/stratosskyeng-thin.otf'),
-        url('../fonts/statosskyeng-v1.001/Desktop fonts/stratosskyeng-black.otf'),
-        url('../fonts/statosskyeng-v1.001/Desktop fonts/stratosskyeng-extralight.otf');
+    src: url('../static/statosskyeng-v1.001/Desktop fonts/stratosskyeng-regular.otf'),
+        url('../static/statosskyeng-v1.001/Desktop fonts/stratosskyeng-light.otf'),
+        url('../static/statosskyeng-v1.001/Desktop fonts/stratosskyeng-medium.otf'),
+        url('../static/statosskyeng-v1.001/Desktop fonts/stratosskyeng-thin.otf'),
+        url('../static/statosskyeng-v1.001/Desktop fonts/stratosskyeng-black.otf'),
+        url('../static/statosskyeng-v1.001/Desktop fonts/stratosskyeng-extralight.otf');
+
 }
 
 * {
@@ -161,4 +162,19 @@ body {
 main {
     width: 100vw;
     height: 85vh;
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    align-items: center;
+    justify-items: center;
+    align-content: center;
+}
+
+.card {
+    padding: 20px;
+    cursor: pointer;
+}
+
+.back {
+    content: url('../static/images/back.png');
 } /*# sourceMappingURL=style.css.map */
+

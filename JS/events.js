@@ -1,17 +1,17 @@
-// function selectGameLevel(event) {
-//     event.preventDefault();
+export function selectGameLevel(event) {
+    event.preventDefault();
+    const content = document.querySelector('.content');
 
-//     const difficultyLevels = blockDifficulty.querySelector(
-//         '.difficulty__levels'
-//     );
+    const difficultyLevels = content.querySelector('.difficulty__levels');
 
-//     const selectedLevel = difficultyLevels.querySelector('input:checked');
-//     if (!selectedLevel) {
-//         console.log('Выберите уровень!');
-//         return;
-//     }
+    const selectedLevel = difficultyLevels.querySelector('input:checked');
+    if (!selectedLevel) {
+        console.log('Выберите уровень!');
+        return;
+    }
+    window.application.level = selectedLevel.value;
+    content.textContent = '';
 
-//     window.application.level = selectedLevel.value;
+    window.application.renderScreen('game');
+}
 
-//     document.body.textContent = '';
-// }

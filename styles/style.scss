@@ -1,11 +1,12 @@
 @font-face {
     font-family: 'StratosSkyeng';
-    src: url('../fonts/statosskyeng-v1.001/Desktop\ fonts/stratosskyeng-regular.otf'),
-        url('../fonts/statosskyeng-v1.001/Desktop\ fonts/stratosskyeng-light.otf'),
-        url('../fonts/statosskyeng-v1.001/Desktop\ fonts/stratosskyeng-medium.otf'),
-        url('../fonts/statosskyeng-v1.001/Desktop\ fonts/stratosskyeng-thin.otf'),
-        url('../fonts/statosskyeng-v1.001/Desktop\ fonts/stratosskyeng-black.otf'),
-        url('../fonts/statosskyeng-v1.001/Desktop\ fonts/stratosskyeng-extralight.otf');
+    src: url('../static/statosskyeng-v1.001/Desktop fonts/stratosskyeng-regular.otf'),
+        url('../static/statosskyeng-v1.001/Desktop fonts/stratosskyeng-light.otf'),
+        url('../static/statosskyeng-v1.001/Desktop fonts/stratosskyeng-medium.otf'),
+        url('../static/statosskyeng-v1.001/Desktop fonts/stratosskyeng-thin.otf'),
+        url('../static/statosskyeng-v1.001/Desktop fonts/stratosskyeng-black.otf'),
+        url('../static/statosskyeng-v1.001/Desktop fonts/stratosskyeng-extralight.otf');
+
 }
 
 * {
@@ -38,7 +39,8 @@ body {
 }
 
 .difficulty__heading {
-    font-family: 'StratosSkyeng';
+    font-family: 'StratosSkyeng', 'sans-serif';
+
     font-style: normal;
     font-weight: 400;
     font-size: 40px;
@@ -63,7 +65,8 @@ body {
     width: 98px;
     height: 98px;
     text-align: center;
-    font-family: 'StratosSkyeng';
+    font-family: 'StratosSkyeng', 'sans-serif';
+
     font-style: normal;
     font-weight: 400;
     font-size: 64px;
@@ -87,7 +90,8 @@ body {
 }
 
 .btn {
-    font-family: 'StratosSkyeng';
+    font-family: 'StratosSkyeng', 'sans-serif';
+
     font-style: normal;
     font-weight: 400;
     font-size: 24px;
@@ -138,7 +142,8 @@ body {
 }
 
 .game__clock-text > span {
-    font-family: 'StratosSkyeng';
+    font-family: 'StratosSkyeng', 'sans-serif';
+
     font-style: normal;
     font-weight: 400;
     font-size: 16px;
@@ -151,7 +156,8 @@ body {
 }
 
 .game__clock {
-    font-family: 'StratosSkyeng';
+    font-family: 'StratosSkyeng', 'sans-serif';
+
     font-style: normal;
     font-weight: 400;
     font-size: 64px;
@@ -164,4 +170,23 @@ body {
 main {
     width: 100vw;
     height: 85vh;
+
+    // display: flex;
+    // justify-content: space-around;
+    // align-items: center;
+    // flex-wrap: wrap;
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    align-items: center;
+    justify-items: center;
+    align-content: center;
+}
+
+.card {
+    padding: 20px;
+    cursor: pointer;
+}
+
+.back {
+    content: url('../static/images/back.png');
 }
