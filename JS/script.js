@@ -1,7 +1,3 @@
-const blockDifficulty = document.querySelector('.block__difficulty');
+// const blockDifficulty = document.querySelector('.block__difficulty');
 
-blockDifficulty.addEventListener('submit', selectGameLevel);
-
-
-
-
+// blockDifficulty.addEventListener('submit', selectGameLevel);
